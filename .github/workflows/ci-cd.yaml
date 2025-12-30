@@ -91,7 +91,7 @@ jobs:
           
           git pull origin main --rebase
           
-          sed -i "s|k8s:.*|k8s:${{ github.run_number }}|g" Ansible/k8s_deployment.yaml
+          sed -i "s|k8s_ansible:.*|k8s_ansible:${{ github.run_number }}|g" Ansible/k8s_deployment.yaml
 
           git add Ansible/k8s_deployment.yaml
           git commit -m "Update deployment image tag to version ${{ github.run_number }} [skip ci]"
